@@ -29,4 +29,27 @@
 	})
 	
 	,false,true,-1,true,true,true,true,true);d[f]=c.API;document.getElementById(g).setAttribute("HYP_dn",f);c.z_o(this.body)})();})();
+	document.getElementById('petitionForm').addEventListener('submit', async function(event) {
+		event.preventDefault(); // Prevent the default form submission behavior
+	
+		// Get form input values
+		const name = document.getElementById('nameInput').value;
+		const email = document.getElementById('emailInput').value;
+		const comment = document.getElementById('commentInput').value;
+	
+		// Replace 'https://your-worker-url' with your actual Cloudflare Worker URL
+		const response = await fetch('https://petition-handler.fletcher-christians-account3359.workers.dev/', {
+			method: 'POST',
+			headers: { 'Content-Type': 'application/json' },
+			body: JSON.stringify({ name: name, email: email, comment: comment }) // Send the data in JSON format
+		});
+	
+		// Handle the response from the server
+		if (response.ok) {
+			const data = await response.json();
+			document.getElementById('signatureCount').innerText = 'Signatures: ' + data.count; // Update the signature count
+		} else {
+			console.error('Failed to submit signature');
+		}
+	});
 	
