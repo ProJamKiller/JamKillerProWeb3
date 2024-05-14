@@ -1,75 +1,71 @@
 <!DOCTYPE html>
-<html>
-  <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<meta http-equiv="X-UA-Compatible" content="chrome=1,IE=edge" />
-	<title>EndallWar</title>
-	<style>
-		html {
-			height:100%;
-		}
-		body {
-			background-color:#464646;
-			margin:0;
-			height:100%;
-		}
-	</style>
-	<!-- copy these lines to your document head: -->
-
-	<meta name="viewport" content="user-scalable=yes, width=800" />
-	<style> @font-face {
-    font-family: 'chicagoflfregular';
-    src: url('EndAllWar.hyperesources/chicagoflf.eot');
-    src: url('EndAllWar.hyperesources/chicagoflf.eot?#iefix') format('embedded-opentype'),
-         url('EndAllWar.hyperesources/chicagoflf.woff2') format('woff2'),
-         url('EndAllWar.hyperesources/chicagoflf.woff') format('woff'),
-         url('EndAllWar.hyperesources/chicagoflf.ttf') format('truetype'),
-         url('EndAllWar.hyperesources/chicagoflf.svg#chicagoflfregular') format('svg');
-    font-weight: normal;
-    font-style: normal;
-}
-</style> 
- <meta charset="UTF-8">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Join the movement to end all wars and halt funding for the military industrial complex. Sign the petition today!">
-    <meta name="author" content="Hathor's Pledge, an initiative to promote peace and end violence worldwide.">
-    <title>End All Wars Petition</title>
-    <link rel="icon" href="Assets/palestinian_flag.ico" type="image/x-icon">
-    <link rel="stylesheet" href="styles.css">
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <title>Signature Petition</title>
+    <style>
+        body, html {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f4f4f4;
+            color: #333;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
 
-	<!-- end copy -->
-  </head>
-  <body>
-	<!-- copy these lines to your document: -->
+        main {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+        }
 
-	<div id="endallwar_hype_container" class="HYPE_document" style="margin:auto;position:relative;width:100%;height:3800px;overflow:hidden;">
-		<noscript>
-			<img src="EndAllWar.hyperesources/poster.jpg" width="100%" height="100%">
-		</noscript>
-		<script type="text/javascript" charset="utf-8" src="EndAllWar.hyperesources/endallwar_hype_generated_script.js?46794"></script>
-	</div>
+        .petition {
+            text-align: center;
+            padding: 20px;
+            background: white;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            width: 300px;
+        }
 
-	<!-- end copy -->
-	
+        input[type="text"], input[type="email"], textarea {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin-top: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
 
-
-	<!-- text content for search engines: -->
-
-	<div style="display:none" aria-hidden=true>
-
-		<div></div>
-		<div>End All War!</div>
-		<div>End All War!</div>
-		<div>Sign the Petition
-Raise Your Voice - No More War!
-   Sign Now
-Signatures: 0
-</div>
-
-	</div>
-
-	<!-- end text content: -->
-
-  </body>
+        button {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <div class="petition">
+            <h1>Sign the Petition</h1>
+            <p>Raise Your Voice - No More War!</p>
+            <form id="petitionForm">
+                <input type="text" id="nameInput" placeholder="Your Name" required>
+                <input type="email" id="emailInput" placeholder="Your Email" required>
+                <textarea id="commentInput" placeholder="Add a comment (optional)"></textarea>
+                <button type="submit">Sign Now</button>
+            </form>
+            <div id="signatureCount">Signatures: 0</div>
+        </div>
+    </main>
+    <script src="EndAllWar.hyperesources/endallwar_hype_generated_script.js?46794"></script>
+</body>
 </html>
