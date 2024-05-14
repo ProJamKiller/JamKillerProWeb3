@@ -11,8 +11,8 @@
             padding: 0;
             background: #f4f4f4;
             color: #333;
-            width: %;
-            height: %;
+            width: 100%;
+            height: 100%;
             overflow: hidden;
         }
 
@@ -56,7 +56,7 @@
     <main>
         <div class="petition">
             <h1>Sign the Petition</h1>
-            <p>Raise Your Voice - No More War! </p>
+            <p>Raise Your Voice - No More War!</p>
             <form id="petitionForm">
                 <input type="text" id="nameInput" placeholder="Your Name" required>
                 <input type="email" id="emailInput" placeholder="Your Email" required>
@@ -66,27 +66,6 @@
             <div id="signatureCount">Signatures: 0</div>
         </div>
     </main>
-    <script>
-        document.getElementById('petitionForm').addEventListener('submit', async function(event) {
-            event.preventDefault();
-            const name = document.getElementById('nameInput').value;
-            const email = document.getElementById('emailInput').value;
-            const comment = document.getElementById('commentInput').value;
-
-            // Replace 'https://your-cloudflare-worker.url/submit' with the actual URL of your Cloudflare Worker
-            const response = await fetch('petition-handler.fletcher-christians-account3359.workers.dev', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ name: name, email: email, comment: comment })
-            });
-
-            if (response.ok) {
-                const data = await response.json();
-                document.getElementById('signatureCount').innerText = 'Signatures: ' + data.count;
-            } else {
-                console.error('Failed to submit signature');
-            }
-        });
-    </script>
+    <script src="EndAllWar.hyperesources/endallwar_hype_generated_script.js?46794"></script>
 </body>
 </html>
