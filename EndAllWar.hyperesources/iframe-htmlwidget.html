@@ -1,90 +1,46 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Signature Petition</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1,IE=edge" />
+    <title>Stop War Petition</title>
+    <meta name="viewport" content="user-scalable=yes, initial-scale=1.0, width=device-width" />
     <style>
-        body, html {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background: #f4f4f4;
-            color: #333;
-            width: %;
-            height: %;
-            overflow: hidden;
-        }
-
-        main {
-            display: flex;
-            justify-content: center;
-            align-items: center;
+        html {
             height: 100%;
         }
-
-        .petition {
-            text-align: center;
-            padding: 20px;
-            background: white;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            border-radius: 8px;
-            width: 300px;
-        }
-
-        input[type="text"], input[type="email"], textarea {
-            width: calc(100% - 20px);
-            padding: 10px;
-            margin-top: 10px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-        }
-
-        button {
-            width: 100%;
-            padding: 10px;
-            margin-top: 10px;
-            background-color: #007BFF;
-            color: white;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
+        body {
+            background-color: #000;
+            margin: 0;
+            height: 100%;
         }
     </style>
+    <link href='https://fonts.googleapis.com/css?family=Handjet:500&subset=latin' rel='stylesheet' type='text/css'>
 </head>
 <body>
-    <main>
-        <div class="petition">
-            <h1>Sign the Petition</h1>
-            <p>Raise Your Voice - No More War! </p>
-            <form id="petitionForm">
-                <input type="text" id="nameInput" placeholder="Your Name" required>
-                <input type="email" id="emailInput" placeholder="Your Email" required>
-                <textarea id="commentInput" placeholder="Add a comment (optional)"></textarea>
-                <button type="submit">Sign Now</button>
-            </form>
-            <div id="signatureCount">Signatures: 0</div>
-        </div>
-    </main>
-    <script>
-        document.getElementById('petitionForm').addEventListener('submit', async function(event) {
-            event.preventDefault();
-            const name = document.getElementById('nameInput').value;
-            const email = document.getElementById('emailInput').value;
-            const comment = document.getElementById('commentInput').value;
+    <form id="petitionForm">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+        <button type="submit">Submit</button>
+    </form>
 
-            // Replace 'https://your-cloudflare-worker.url/submit' with the actual URL of your Cloudflare Worker
-            const response = await fetch('https://your-cloudflare-worker.url/submit', {
+    <script>
+        document.getElementById('petitionForm').addEventListener('submit', async (event) => {
+            event.preventDefault();
+
+            const name = document.getElementById('name').value;
+            const response = await fetch('https://petition-handler.fletcher-christians-account3359.workers.dev', {
                 method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ name: name, email: email, comment: comment })
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ name })
             });
 
             if (response.ok) {
-                const data = await response.json();
-                document.getElementById('signatureCount').innerText = 'Signatures: ' + data.count;
+                alert('Name saved!');
             } else {
-                console.error('Failed to submit signature');
+                alert('There was an error saving your name.');
             }
         });
     </script>
