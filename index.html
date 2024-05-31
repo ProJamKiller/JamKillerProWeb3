@@ -38,20 +38,23 @@
         document.getElementById('petitionForm').addEventListener('submit', async (event) => {
             event.preventDefault();
             const name = document.getElementById('name').value;
+            console.log('Submitting form with name:', name);
             try {
-                const response = await fetch('https://petition-handler.fletcher-christians-account3359.workers.dev/*', {
+                const response = await fetch('https://fletcherchristiankc.rip/*', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'
                     },
                     body: JSON.stringify({ name })
                 });
+                console.log('Response:', response);
                 if (response.ok) {
                     alert('Name saved!');
                 } else {
                     alert('There was an error saving your name.');
                 }
             } catch (error) {
+                console.error('Error:', error);
                 alert('There was an error processing your request.');
             }
         });
