@@ -1,100 +1,122 @@
 <!DOCTYPE html>
 <html>
-  <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<meta http-equiv="X-UA-Compatible" content="chrome=1,IE=edge" />
-	<title>EndallWar</title>
-	<style>
-		html {
-			height:100%;
-		}
-		body {
-			background-color:#464646;
-			margin:0;
-			height:100%;
-		}
-	</style>
-	<!-- copy these lines to your document head: -->
-
-	<meta name="viewport" content="user-scalable=yes, width=800" />
-	<style> @font-face {
-    font-family: 'chicagoflfregular';
-    src: url('EndAllWar.hyperesources/chicagoflf.eot');
-    src: url('EndAllWar.hyperesources/chicagoflf.eot?#iefix') format('embedded-opentype'),
-         url('EndAllWar.hyperesources/chicagoflf.woff2') format('woff2'),
-         url('EndAllWar.hyperesources/chicagoflf.woff') format('woff'),
-         url('EndAllWar.hyperesources/chicagoflf.ttf') format('truetype'),
-         url('EndAllWar.hyperesources/chicagoflf.svg#chicagoflfregular') format('svg');
-    font-weight: normal;
-    font-style: normal;
-}
-</style> 
- <meta charset="UTF-8">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1,IE=edge" />
+    <title>EndallWar</title>
+    <style>
+        html {
+            height: 100%;
+        }
+        body {
+            background-color: #464646;
+            margin: 0;
+            height: 100%;
+        }
+    </style>
+    <meta name="viewport" content="user-scalable=yes, width=800" />
+    <style> 
+        @font-face {
+            font-family: 'chicagoflfregular';
+            src: url('EndAllWar.hyperesources/chicagoflf.eot');
+            src: url('EndAllWar.hyperesources/chicagoflf.eot?#iefix') format('embedded-opentype'),
+                 url('EndAllWar.hyperesources/chicagoflf.woff2') format('woff2'),
+                 url('EndAllWar.hyperesources/chicagoflf.woff') format('woff'),
+                 url('EndAllWar.hyperesources/chicagoflf.ttf') format('truetype'),
+                 url('EndAllWar.hyperesources/chicagoflf.svg#chicagoflfregular') format('svg');
+            font-weight: normal;
+            font-style: normal;
+        }
+    </style> 
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Join the movement to end all wars and halt funding for the military industrial complex. Sign the petition today!">
     <meta name="author" content="Hathor's Pledge, an initiative to promote peace and end violence worldwide.">
     <title>End All Wars Petition</title>
     <link rel="icon" href="Assets/palestinian_flag.ico" type="image/x-icon">
     <link rel="stylesheet" href="styles.css">
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+</head>
+<body>
+    <!-- copy these lines to your document: -->
+    <div id="endallwar_hype_container" class="HYPE_document" style="margin:auto;position:relative;width:100%;height:3800px;overflow:hidden;">
+        <noscript>
+            <img src="EndAllWar.hyperesources/poster.jpg" width="100%" height="100%">
+        </noscript>
+        <script type="text/javascript" charset="utf-8" src="EndAllWar.hyperesources/endallwar_hype_generated_script.js?48659"></script>
+    </div>
+    <!-- end copy -->
 
-	<!-- end copy -->
-  </head>
-  <body>
-	<!-- copy these lines to your document: -->
+    <!-- iFrame for form submission -->
+    <iframe src="data:text/html;charset=utf-8,
+    <html>
+        <head>
+            <meta charset='UTF-8'>
+            <title>Stop War Petition</title>
+            <style>
+                body {
+                    background-color: #464646;
+                    color: #fff;
+                    font-family: Arial, sans-serif;
+                }
+                form {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    height: 100vh;
+                }
+                input, button {
+                    margin: 10px;
+                    padding: 10px;
+                    font-size: 16px;
+                }
+            </style>
+        </head>
+        <body>
+            <form id='petitionForm'>
+                <label for='name'>Name:</label>
+                <input type='text' id='name' name='name' required>
+                <button type='submit'>Submit</button>
+            </form>
+            <script>
+                document.getElementById('petitionForm').addEventListener('submit', async (event) => {
+                    event.preventDefault();
+                    const name = document.getElementById('name').value;
+                    try {
+                        const response = await fetch('https://petition-handler.fletcher-christians-account3359.workers.dev/*', {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json'
+                            },
+                            body: JSON.stringify({ name })
+                        });
+                        if (response.ok) {
+                            alert('Name saved!');
+                        } else {
+                            alert('There was an error saving your name.');
+                        }
+                    } catch (error) {
+                        alert('There was an error processing your request.');
+                    }
+                });
+            </script>
+        </body>
+    </html>" 
+    style="border: none; width: 100%; height: 400px;">
+    </iframe>
 
-	<div id="endallwar_hype_container" class="HYPE_document" style="margin:auto;position:relative;width:100%;height:3800px;overflow:hidden;">
-		<noscript>
-			<img src="EndAllWar.hyperesources/poster.jpg" width="100%" height="100%">
-		</noscript>
-		<script type="text/javascript" charset="utf-8" src="EndAllWar.hyperesources/endallwar_hype_generated_script.js?48659"></script>
-	</div>
-
-	<!-- end copy -->
-	
-
-
-	<!-- text content for search engines: -->
-
-	<div style="display:none" aria-hidden=true>
-
-		<div></div>
-		<div>End All War!</div>
-		<div>End All War!</div>
-		<div>Sign the Petition
-Raise Your Voice - No More War!
-   Sign Now
-Signatures: 0
-</div>
-
-	</div>
-
-	<!-- end text content: -->
-
-  </body>
-</html>
-
-
-	<!-- end copy -->
-	
-
-
-	<!-- text content for search engines: -->
-
-	<div style="display:none" aria-hidden=true>
-
-		<div></div>
-		<div>End All War!</div>
-		<div>End All War!</div>
-		<div>Sign the Petition
-Raise Your Voice - No More War!
-   Sign Now
-Signatures: 0
-</div>
-
-	</div>
-
-	<!-- end text content: -->
-
-  </body>
+    <!-- text content for search engines: -->
+    <div style="display:none" aria-hidden=true>
+        <div></div>
+        <div>End All War!</div>
+        <div>End All War!</div>
+        <div>Sign the Petition
+        Raise Your Voice - No More War!
+        Sign Now
+        Signatures: 0
+        </div>
+    </div>
+    <!-- end text content: -->
+</body>
 </html>
