@@ -19,12 +19,12 @@
       height: 100vh;
       width: 100%;
       text-align: center;
-      font-size: 4em;
-      color: #fff;
-      background-color: #000;
-      position: absolute;
-      z-index: 1;
-      animation: fadeOut 5s ease-in-out forwards;
+      font-size: 6em; /* Large font size */
+      color: #fff; /* White text color */
+      background-color: #000; /* Black background */
+      position: relative;
+      z-index: 1; /* Ensure the title is above the scrolling content */
+      animation: fadeOut 5s 5s ease-in-out forwards; /* Fade out animation after 5 seconds */
     }
     @keyframes fadeOut {
       0% { opacity: 1; }
@@ -32,16 +32,12 @@
     }
     .scroll-content {
       position: absolute;
-      top: 100%;
+      top: 0;
       animation: scroll 300s linear infinite;
     }
     @keyframes scroll {
-      0% {
-        top: 100%;
-      }
-      100% {
-        top: -100%;
-      }
+      0% { top: 100%; }
+      100% { top: -100%; }
     }
     .entry {
       margin-bottom: 20px;
