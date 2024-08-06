@@ -1,63 +1,239 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Stop War Petition</title>
-    <style>
-        body {
-            background-color: #f0f0f0;
-            color: #333;
-            font-family: Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-        }
-        form {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
-        input, button {
-            padding: 10px;
-            font-size: 16px;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scrolling Commands of Violence</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      overflow: hidden;
+    }
+    .scroll-container {
+      width: 100%;
+      height: 100vh;
+      overflow: hidden;
+      position: relative;
+      background-color: #fff;
+      padding: 20px;
+    }
+    .scroll-content {
+      position: absolute;
+      top: 100%;
+      animation: scroll 600s linear infinite;
+    }
+    @keyframes scroll {
+      0% {
+        top: 100%;
+      }
+      100% {
+        top: -100%;
+      }
+    }
+    .entry {
+      margin-bottom: 20px;
+    }
+    .reference {
+      font-weight: bold;
+    }
+  </style>
 </head>
 <body>
-    <form id="petitionForm">
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name" required>
-        <button type="submit">Submit</button>
-    </form>
-
-    <script>
-        document.getElementById('petitionForm').addEventListener('submit', async (event) => {
-            event.preventDefault();
-            const name = document.getElementById('name').value;
-            console.log('Submitting form with name:', name);
-            try {
-                const response = await fetch('https://fletcherchristiankc.rip/*', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify({ name })
-                });
-                console.log('Response:', response);
-                if (response.ok) {
-                    alert('Name saved!');
-                } else {
-                    alert('There was an error saving your name.');
-                }
-            } catch (error) {
-                console.error('Error:', error);
-                alert('There was an error processing your request.');
-            }
-        });
-    </script>
-</body>
-</html>
+  <div class="scroll-container">
+    <div class="scroll-content">
+      <div class="entry">
+        <div class="reference">Isaiah 13:15-18</div>
+        <div class="description">“Whoever is captured will be thrust through; all who are caught will fall by the sword.”</div>
+      </div>
+      <div class="entry">
+        <div class="reference">Isaiah 10:12</div>
+        <div class="description">“When the Lord has finished all his work against Mount Zion and Jerusalem, he will punish the king of Assyria.”</div>
+      </div>
+      <div class="entry">
+        <div class="reference">Isaiah 34:2</div>
+        <div class="description">“The LORD is angry with all nations; his wrath is on all their armies. He will totally destroy them, he will give them over to slaughter.”</div>
+      </div>
+      <div class="entry">
+        <div class="reference">Jeremiah 25:15-33</div>
+        <div class="description">Numerous judgments against nations, including specific instructions to “drink the cup of wrath” and face destruction.</div>
+      </div>
+      <div class="entry">
+        <div class="reference">Lamentations 2:21-22</div>
+        <div class="description">“In the day of the LORD’s anger, no one escaped or survived; those I cared for and reared, my enemy has destroyed.”</div>
+      </div>
+      <div class="entry">
+        <div class="reference">Ezekiel 9:5-7</div>
+        <div class="description">“Go throughout the city… and kill, without showing pity or compassion.”</div>
+      </div>
+      <div class="entry">
+        <div class="reference">Daniel 8:24-25</div>
+        <div class="description">“He will destroy those who are mighty, the holy people.”</div>
+      </div>
+      <div class="entry">
+        <div class="reference">Hosea 13:16</div>
+        <div class="description">“Samaria will bear her guilt, because she has rebelled against her God. They will fall by the sword; their little ones will be dashed to the ground, their pregnant women ripped open.”</div>
+      </div>
+      <div class="entry">
+        <div class="reference">Joel 2:11</div>
+        <div class="description">“The day of the LORD is great; it is dreadful. Who can endure it?”</div>
+      </div>
+      <div class="entry">
+        <div class="reference">Amos 1:3-2:3</div>
+        <div class="description">Series of judgments against various nations, including “I will send fire upon [city].”</div>
+      </div>
+      <div class="entry">
+        <div class="reference">Obadiah 1:18</div>
+        <div class="description">“The house of Jacob will be a fire and the house of Joseph a flame; the house of Esau will be stubble, and they will set it on fire and consume it.”</div>
+      </div>
+      <div class="entry">
+        <div class="reference">Jonah 3:4</div>
+        <div class="description">“Forty more days and Nineveh will be overthrown.” (Though Nineveh repents and is spared, the initial message was one of impending destruction.)</div>
+      </div>
+      <div class="entry">
+        <div class="reference">Micah 1:6-7</div>
+        <div class="description">“Therefore I will make Samaria a heap of rubble, a place for planting vineyards.”</div>
+      </div>
+      <div class="entry">
+        <div class="reference">Nahum 1:14</div>
+        <div class="description">“The LORD has given a command concerning you, Nineveh: ‘You will have no descendants to bear your name.’”</div>
+      </div>
+      <div class="entry">
+        <div class="reference">Habakkuk 2:8</div>
+        <div class="description">“Because you have plundered many nations, the peoples who are left will plunder you.”</div>
+      </div>
+      <div class="entry">
+        <div class="reference">Zephaniah 1:3-4</div>
+        <div class="description">“I will sweep away both man and beast; I will sweep away the birds in the sky and the fish in the sea.”</div>
+      </div>
+      <div class="entry">
+        <div class="reference">Haggai 2:22</div>
+        <div class="description">“I will overturn royal thrones and shatter the power of the foreign kingdoms.”</div>
+      </div>
+      <div class="entry">
+        <div class="reference">Zechariah 14:12</div>
+        <div class="description">“Their flesh will rot while they are still standing on their feet, their eyes will rot in their sockets, and their tongues will rot in their mouths.”</div>
+      </div>
+      <div class="entry">
+        <div class="reference">Malachi 4:1</div>
+        <div class="description">“‘Surely the day is coming; it will burn like a furnace. All the arrogant and every evildoer will be stubble.’”</div>
+      </div>
+      <div class="entry">
+        <div class="reference">Genesis 6:17</div>
+        <div class="description">“I am going to bring floodwaters on the earth to destroy all life under the heavens.”</div>
+      </div>
+      <div class="entry">
+        <div class="reference">Genesis 19:24-25</div>
+        <div class="description">“The LORD rained down burning sulfur on Sodom and Gomorrah.”</div>
+      </div>
+      <div class="entry">
+        <div class="reference">Exodus 11:4-5</div>
+        <div class="description">“Every firstborn son in Egypt will die.”</div>
+      </div>
+      <div class="entry">
+        <div class="reference">Exodus 14:27-28</div>
+        <div class="description">“The waters flowed back and covered the chariots and horsemen—the entire army of Pharaoh.”</div>
+      </div>
+      <div class="entry">
+        <div class="reference">Leviticus 24:14-16</div>
+        <div class="description">“Anyone who blasphemes the name of the LORD is to be put to death.”</div>
+      </div>
+      <div class="entry">
+        <div class="reference">Numbers 31:7-17</div>
+        <div class="description">“They fought against Midian, as the LORD commanded Moses, and killed every man.”</div>
+      </div>
+      <div class="entry">
+        <div class="reference">Numbers 15:32-36</div>
+        <div class="description">“The LORD said to Moses, ‘The man must die.’”</div>
+      </div>
+      <div class="entry">
+        <div class="reference">Deuteronomy 7:1-2</div>
+        <div class="description">“You must destroy them totally. Make no treaty with them.”</div>
+      </div>
+      <div class="entry">
+        <div class="reference">Deuteronomy 13:6-10</div>
+        <div class="description">“You shall stone them to death.”</div>
+      </div>
+      <div class="entry">
+        <div class="reference">Deuteronomy 20:16-17</div>
+        <div class="description">“Do not leave alive anything that breathes. Completely destroy them.”</div>
+      </div>
+      <div class="entry">
+        <div class="reference">Joshua 6:21</div>
+       
+            <div class="reference">Isaiah 13:15-18</div>
+            <div class="description">“Whoever is captured will be thrust through; all who are caught will fall by the sword.”</div>
+          </div>
+          <div class="entry">
+            <div class="reference">Isaiah 10:12</div>
+            <div class="description">“When the Lord has finished all his work against Mount Zion and Jerusalem, he will punish the king of Assyria.”</div>
+          </div>
+          <div class="entry">
+            <div class="reference">Isaiah 34:2</div>
+            <div class="description">“The LORD is angry with all nations; his wrath is on all their armies. He will totally destroy them, he will give them over to slaughter.”</div>
+          </div>
+          <div class="entry">
+            <div class="reference">Jeremiah 25:15-33</div>
+            <div class="description">Numerous judgments against nations, including specific instructions to “drink the cup of wrath” and face destruction.</div>
+          </div>
+          <div class="entry">
+            <div class="reference">Lamentations 2:21-22</div>
+            <div class="description">“In the day of the LORD’s anger, no one escaped or survived; those I cared for and reared, my enemy has destroyed.”</div>
+          </div>
+          <div class="entry">
+            <div class="reference">Ezekiel 9:5-7</div>
+            <div class="description">“Go throughout the city… and kill, without showing pity or compassion.”</div>
+          </div>
+          <div class="entry">
+            <div class="reference">Daniel 8:24-25</div>
+            <div class="description">“He will destroy those who are mighty, the holy people.”</div>
+          </div>
+          <div class="entry">
+            <div class="reference">Hosea 13:16</div>
+            <div class="description">“Samaria will bear her guilt, because she has rebelled against her God. They will fall by the sword; their little ones will be dashed to the ground, their pregnant women ripped open.”</div>
+          </div>
+          <div class="entry">
+            <div class="reference">Joel 2:11</div>
+            <div class="description">“The day of the LORD is great; it is dreadful. Who can endure it?”</div>
+          </div>
+          <div class="entry">
+            <div class="reference">Amos 1:3-2:3</div>
+            <div class="description">Series of judgments against various nations, including “I will send fire upon [city].”</div>
+          </div>
+          <div class="entry">
+            <div class="reference">Obadiah 1:18</div>
+            <div class="description">“The house of Jacob will be a fire and the house of Joseph a flame; the house of Esau will be stubble, and they will set it on fire and consume it.”</div>
+          </div>
+          <div class="entry">
+            <div class="reference">Jonah 3:4</div>
+            <div class="description">“Forty more days and Nineveh will be overthrown.” (Though Nineveh repents and is spared, the initial message was one of impending destruction.)</div>
+          </div>
+          <div class="entry">
+            <div class="reference">Micah 1:6-7</div>
+            <div class="description">“Therefore I will make Samaria a heap of rubble, a place for planting vineyards.”</div>
+          </div>
+          <div class="entry">
+            <div class="reference">Nahum 1:14</div>
+            <div class="description">“The LORD has given a command concerning you, Nineveh: ‘You will have no descendants to bear your name.’”</div>
+          </div>
+          <div class="entry">
+            <div class="reference">Habakkuk 2:8</div>
+            <div class="description">“Because you have plundered many nations, the peoples who are left will plunder you.”</div>
+          </div>
+          <div class="entry">
+            <div class="reference">Zephaniah 1:3-4</div>
+            <div class="description">“I will sweep away both man and beast; I will sweep away the birds in the sky and the fish in the sea.”</div>
+          </div>
+          <div class="entry">
+            <div class="reference">Haggai 2:22</div>
+            <div class="description">“I will overturn royal thrones and shatter the power of the foreign kingdoms.”</div>
+          </div>
+          <div class="entry">
+            <div class="reference">Zechariah 14:12</div>
+            <div class="description">“Their flesh will rot while they are still standing on their feet, their eyes will rot in their sockets, and their tongues will rot in their mouths.”</div>
+          </div>
+          <div class="entry">
+            <div class="reference">Malachi 4:1</div>
+            <div class="description">“‘Surely the day is coming; it will burn like a furnace. All the arrogant and every evildoer will be stubble.’”</div>
+          </div>
