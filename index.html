@@ -3,143 +3,135 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yahweh vs. Jesus: A Comparative Study</title>
+    <title>Gnosis: The Truth Beyond</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #1a1a1a;
+            background-color: #000;
             color: #f4f4f4;
             margin: 0;
-            padding: 20px;
-            line-height: 1.6;
+            padding: 0;
+            text-align: center;
         }
         .container {
-            max-width: 800px;
-            margin: 0 auto;
+            max-width: 900px;
+            margin: 50px auto;
             padding: 20px;
-            background-color: #333;
-            border: 1px solid #555;
+            background: rgba(20, 20, 20, 0.9);
             border-radius: 15px;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s ease-in-out;
+        }
+        .show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        h1 {
+            font-size: 2.5em;
+            color: #ffcc00;
+            text-shadow: 0 0 15px rgba(255, 204, 0, 0.8);
+        }
+        .ascii-art {
+            font-size: 14px;
+            color: #ffcc00;
+            text-shadow: 0 0 10px rgba(255, 204, 0, 0.6);
+            white-space: pre;
         }
         .comparison {
-            margin-bottom: 40px;
-        }
-        h2 {
-            margin-top: 0;
-            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            background-color: #111;
+            border-radius: 10px;
+            border: 1px solid #ffcc00;
         }
         .command, .teaching {
             padding: 10px;
             margin: 10px 0;
-            background-color: #444;
+            background-color: #222;
             border-radius: 10px;
         }
-        .gnosis {
-            text-align: center;
-            font-size: 36px;
-            font-weight: bold;
-            letter-spacing: 5px;
-            margin: 20px 0;
-            color: #ffcc00;
-        }
         .arrow {
-            text-align: center;
-            font-size: 16px;
             color: #ffcc00;
+            font-size: 20px;
             margin: 20px 0;
+            cursor: pointer;
+            transition: color 0.3s ease-in-out;
+        }
+        .arrow:hover {
+            color: #ff3300;
+        }
+        .hidden {
+            display: none;
+        }
+        .footer {
+            margin-top: 50px;
+            padding: 20px;
+            background: #111;
+            border-top: 2px solid #ffcc00;
+        }
+        .footer a {
+            margin: 0 10px;
+            color: #ffcc00;
+            font-size: 24px;
+            text-decoration: none;
+            transition: transform 0.3s;
+        }
+        .footer a:hover {
+            transform: scale(1.2);
         }
     </style>
 </head>
 <body>
-
-    <div class="container">
-        <h1>Yahweh vs. Jesus: A Comparative Study</h1>
-
-        <div class="gnosis">GNOSIS</div>
-
+    <h1 id="title">Gnosis: The Truth Beyond</h1>
+    <div class="container show">
+        <pre class="ascii-art">
+    ██████╗ ███╗   ██╗ ██████╗ ██╗███████╗███████╗
+   ██╔═══██╗████╗  ██║██╔═══██╗██║██╔════╝██╔════╝
+   ██║   ██║██╔██╗ ██║██║   ██║██║███████╗█████╗  
+   ██║   ██║██║╚██╗██║██║   ██║██║╚════██║██╔══╝  
+   ╚██████╔╝██║ ╚████║╚██████╔╝██║███████║███████╗
+    ╚═════╝ ╚═╝  ╚═══╝ ╚═════╝ ╚═╝╚══════╝╚══════╝
+        </pre>
+        
         <div class="comparison">
             <div class="command">
                 <h2>Yahweh's Command</h2>
                 <p><strong>Prohibition Against Consuming Blood:</strong></p>
-                <p>Leviticus 17:10-12 - "Any Israelite or any foreigner residing among them who eats any blood—I will set my face against that person who eats blood and will cut them off from the people..."</p>
+                <p>Leviticus 17:10-12 - "...Any Israelite or any foreigner residing among them who eats any blood—I will set my face against that person..."</p>
             </div>
-            <div class="arrow">
-                <<< Look at the Contradiction >>>
-            </div>
-            <div class="teaching">
+            <div class="arrow" onclick="toggleContent('contradiction1')"><<< Click to Reveal Contradiction >>></div>
+            <div class="teaching hidden" id="contradiction1">
                 <h2>Jesus' Teaching</h2>
-                <p><strong>Command to Eat His Flesh and Drink His Blood:</strong></p>
-                <p>John 6:53-56 - "Jesus said to them, 'Very truly I tell you, unless you eat the flesh of the Son of Man and drink his blood, you have no life in you...'</p>
-            </div>
-        </div>
-
-        <div class="comparison">
-            <div class="command">
-                <h2>Yahweh's Command</h2>
-                <p><strong>Prohibition of Human Sacrifice:</strong></p>
-                <p>Deuteronomy 24:16 - "Parents are not to be put to death for their children, nor children put to death for their parents; each will die for their own sin."</p>
-            </div>
-            <div class="arrow">
-                <<< Look at the Contradiction >>>
-            </div>
-            <div class="teaching">
-                <h2>Jesus' Teaching</h2>
-                <p><strong>Jesus' Sacrifice for Sins:</strong></p>
-                <p>Hebrews 9:26 - "But now he has appeared once for all at the end of the ages to do away with sin by the sacrifice of himself."</p>
-            </div>
-        </div>
-
-        <div class="comparison">
-            <div class="command">
-                <h2>Yahweh's Command</h2>
-                <p><strong>Prohibition Against Eating Certain Foods:</strong></p>
-                <p>Leviticus 11 - "This chapter lists animals that are clean and unclean, forbidding the consumption of unclean animals, such as pigs and shellfish."</p>
-            </div>
-            <div class="arrow">
-                <<< Look at the Contradiction >>>
-            </div>
-            <div class="teaching">
-                <h2>Jesus' Teaching</h2>
-                <p><strong>Jesus Declares All Foods Clean:</strong></p>
-                <p>Mark 7:18-19 - "Are you so dull?" he asked. "Don’t you see that nothing that enters a person from the outside can defile them? ... (In saying this, Jesus declared all foods clean.)"</p>
-            </div>
-        </div>
-
-        <div class="comparison">
-            <div class="command">
-                <h2>Yahweh's Command</h2>
-                <p><strong>Sabbath Observance:</strong></p>
-                <p>Exodus 20:8-11 - "Remember the Sabbath day by keeping it holy. Six days you shall labor and do all your work..."</p>
-            </div>
-            <div class="arrow">
-                <<< Look at the Contradiction >>>
-            </div>
-            <div class="teaching">
-                <h2>Jesus' Teaching</h2>
-                <p><strong>Jesus Healing on the Sabbath:</strong></p>
-                <p>Luke 13:14-16 - "But Jesus answered him, 'You hypocrites! Doesn’t each of you on the Sabbath untie your ox or donkey from the stall and lead it out to give it water? ...'</p>
+                <p>John 6:53-56 - "Jesus said, 'Unless you eat the flesh of the Son of Man and drink his blood, you have no life in you...'"</p>
             </div>
         </div>
     </div>
-    <div class="container">
-        <!-- Previous content here -->
     
-        <div class="gnosis">GNOSIS</div>
-    
-        <div class="comparison">
-            <!-- Comparison content here -->
-        </div>
-    
-        <div class="comparison">
-            <!-- Comparison content here -->
-        </div>
-    
-        <!-- Insert this at the bottom -->
-        <div class="reflection">
-            <p>
-                The  heart of this comparison lies a profound dissonance that is difficult to reconcile. The God of the Old Testament, Yahweh, commands the complete annihilation of entire generations, demands strict adherence to laws forbidding the consumption of blood, and insists on the sanctity of rituals and prohibitions. Yet, with the arrival of Jesus, there is an abrupt and radical shift in tone—one that seemingly contradicts the very essence of those earlier commands. The same God who once forbade blood consumption now, through His Son, invites followers to drink His blood as a symbol of communion. The strict, punitive laws of the past are suddenly overshadowed by teachings of grace and forgiveness. This stark transformation raises unsettling questions about the nature of divine consistency and the coherence of these doctrines. How can a deity who once demanded such violence and adherence to rigid laws now present a message of love and inclusion through actions that directly contradict those former edicts? The contrast between the Old and New Testaments challenges believers to confront this cognitive dissonance and reconsider the implications of these divergent teachings.
-            </p>
-        </div>
+    <div class="footer">
+        <a href="https://jamkillerproductions.io">🌐</a>
+        <a href="https://youtube.com/@projamikiller">▶️</a>
+        <a href="https://twitter.com/projamkiller">🐦</a>
+        <a href="https://instagram.com/fletcherchristian1979">📸</a>
+        <a href="https://discord.com/invite/WHJ8sWhHVz">🎮</a>
+        <a href="https://open.spotify.com/artist/2FjdpboVDGnJs9wuGcJV8H">🎵</a>
+        <a href="https://t.me/jamkillerproductions">✉️</a>
+        <a href="https://lensfrens.xyz/@producerprotocol">🔗</a>
+        <a href="https://threads.net/@projamikiller">#️⃣</a>
+        <a href="https://tiktok.com/@thefletcherchristianband">🎶</a>
+        <a href="https://music.apple.com/us/artist/fletcher-christian/1237400126">🍏</a>
+        <a href="https://warpcast.com/projamkiller.eth">🚀</a>
+        <a href="https://soundcloud.com/96VBkCxknVruq9vWA">🔊</a>
+        <a href="https://zora.co/@projamkiller">🖼️</a>
+        <a href="mailto:yo@producerprotocol.pro">📧</a>
     </div>
+    
+    <script>
+        function toggleContent(id) {
+            var element = document.getElementById(id);
+            element.classList.toggle("hidden");
+        }
+    </script>
 </body>
 </html>
