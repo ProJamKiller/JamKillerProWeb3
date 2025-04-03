@@ -19,6 +19,7 @@
       font-family: 'Open Sans', sans-serif;
       background: linear-gradient(135deg, #0c0c0c, #272727);
       color: #fff;
+      overflow-x: hidden;
     }
 
     header {
@@ -26,8 +27,8 @@
       padding: 80px 20px;
       background: rgba(0, 0, 0, 0.6);
       position: relative;
-      overflow: hidden;
       border-bottom: 2px solid #ffcc00;
+      overflow: hidden;
     }
 
     /* HEADER BACKGROUND ANIMATION (OPTIONAL) */
@@ -35,12 +36,13 @@
       content: "";
       position: absolute;
       top: 0;
-      left: 0;
+      left: -50%;
       width: 200%;
       height: 200%;
       background: radial-gradient(#ffcc00, transparent 70%);
       opacity: 0.07;
       animation: pulse 5s infinite alternate ease-in-out;
+      pointer-events: none;
     }
 
     @keyframes pulse {
@@ -54,13 +56,28 @@
       color: #ffcc00;
       margin-bottom: 10px;
       text-shadow: 0 0 10px rgba(255, 204, 0, 0.8);
+      position: relative;
+      z-index: 2;
+    }
+
+    header h2 {
+      font-size: 1.1rem;
+      color: #ccc;
+      text-transform: uppercase;
+      font-weight: normal;
+      letter-spacing: 1px;
+      margin-bottom: 10px;
+      position: relative;
+      z-index: 2;
     }
 
     header p {
-      font-size: 1.2rem;
+      font-size: 1rem;
       color: #ccc;
       max-width: 600px;
       margin: 0 auto;
+      position: relative;
+      z-index: 2;
     }
 
     .container {
@@ -76,7 +93,7 @@
       margin-bottom: 40px;
     }
 
-    section h2 {
+    section h3 {
       font-size: 2rem;
       border-bottom: 2px solid #ffcc00;
       display: inline-block;
@@ -112,7 +129,7 @@
       padding: 15px;
     }
 
-    .card-header h3 {
+    .card-header h4 {
       color: #ffcc00;
       margin-bottom: 5px;
       font-size: 1.2rem;
@@ -148,7 +165,7 @@
       border-top: 1px solid #ffcc00;
     }
 
-    .card-body h4 {
+    .card-body h5 {
       color: #ffcc00;
       margin-bottom: 10px;
       font-size: 1.1rem;
@@ -173,7 +190,7 @@
       margin-bottom: 25px;
     }
 
-    .quiz-question h3 {
+    .quiz-question h4 {
       font-size: 1rem;
       margin-bottom: 10px;
       color: #fff;
@@ -233,31 +250,52 @@
       margin: 20px 0;
     }
 
+    /* CTA or EXTRA STYLES */
+    .warning-block {
+      background: #2b0000;
+      border-left: 4px solid #ff0000;
+      padding: 20px;
+      margin-bottom: 40px;
+      color: #f2f2f2;
+    }
+
+    .warning-block h4 {
+      margin-bottom: 10px;
+      color: #ff5555;
+    }
+
+    .warning-block p {
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
     /* FOOTER */
-    .footer {
+    footer {
       margin-top: 40px;
       padding: 20px;
       background: #111;
       border-top: 2px solid #ffcc00;
       text-align: center;
     }
-
-    .footer a {
-      margin: 0 10px;
+    footer a {
       color: #ffcc00;
-      font-size: 24px;
+      font-size: 1rem;
       text-decoration: none;
       transition: transform 0.3s;
+      display: inline-block;
+      margin-top: 5px;
     }
-
-    .footer a:hover {
-      transform: scale(1.2);
+    footer a:hover {
+      transform: scale(1.1);
     }
 
     /* RESPONSIVE */
     @media (max-width: 600px) {
       header h1 {
         font-size: 2.5rem;
+      }
+      header h2 {
+        font-size: 0.9rem;
       }
       .container {
         margin: 20px;
@@ -273,86 +311,98 @@
   <!-- HEADER -->
   <header>
     <h1>GNOSIS</h1>
-    <p>The Bible: Powerful, Poetic, and Definitely Not a Literal Script for Doom.</p>
+    <h2>Knowing That Abrahamic Traditions Cannot Be Taken Literally</h2>
+    <p>
+      When you've got talk of prophecies and holy wars fueling real-world tensions, it's time to wake up and see 
+      the bigger picture: dogmatic literalism is a recipe for global disaster.
+    </p>
   </header>
 
   <!-- MAIN CONTENT WRAPPER -->
   <div class="container">
 
-    <!-- WELCOME SECTION -->
-    <section id="welcome">
-      <h2>Welcome to GNOSIS</h2>
+    <!-- WARNING ABOUT CURRENT WORLD -->
+    <div class="warning-block">
+      <h4>Global Reality Check</h4>
       <p>
-        Here at GNOSIS, we say it’s time to question out-of-context interpretations, contradictory verses, and
-        doomsday predictions that never seem to pan out. (Looking at you, 1844, 1988, 2011...) 
+        Wars rage across continents. Nations stockpile nukes. The slightest spark could spiral us into World War III. 
+        Yet, many cling to ancient texts, reading every line like a cosmic instruction manual for Armageddon. 
+        Does that really make sense in the 21st century, or are we stoking our own apocalypse?
       </p>
+    </div>
+
+    <!-- INTRO SECTION -->
+    <section id="intro">
+      <h3>Why GNOSIS?</h3>
       <p>
-        Armed with a Master’s in Theology (and a penchant for snark), we’re here to guide you through the 
-        glorious maze of biblical passages—helping you see them for their symbolic, poetic, and metaphorical brilliance 
-        rather than reading them like a boring, overly literal instruction manual.
+        GNOSIS isn’t here to politely whisper that maybe, just maybe, everything in scripture 
+        shouldn’t be read as factual history. We’re here to yell it from the rooftops: 
+        <strong>Literalism kills nuance, fosters extremism, and practically begs for doomsday scenarios.</strong> 
+        Whether it's fueling religious nationalist movements or justifying violence, 
+        a “take it at face value” approach to Abrahamic texts belongs in the Dark Ages, not our modern, 
+        nuclear-tipped era.
       </p>
     </section>
 
     <!-- CONTRADICTIONS SECTION -->
     <section id="contradictions">
-      <h2>Contradictions & Absurdities</h2>
+      <h3>Contradictions & Absurdities</h3>
       <p>
-        Because reading ancient texts literally—word for word—can lead to head-scratching moments like these:
+        Let’s get blunt: If you're basing modern-day policies or existential beliefs on 
+        documents that can’t keep their own stories straight, how confident can you really be?
       </p>
 
       <!-- EXAMPLE CONTRADICTION CARD -->
       <div class="contradiction-card">
         <div class="card-header">
-          <h3>1. God Incites or Satan Incites?</h3>
-          <p>2 Samuel 24:1 <em>vs.</em> 1 Chronicles 21:1</p>
+          <h4>God Incites or Satan Incites?</h4>
+          <p>(2 Samuel 24:1 vs. 1 Chronicles 21:1)</p>
         </div>
         <button class="reveal-btn" onclick="toggleCard('card-body-1')">
           Reveal the Contradiction
         </button>
         <div class="card-body" id="card-body-1">
-          <h4>The Conflict</h4>
+          <h5>The Conflict</h5>
           <p>
-            In 2 Samuel 24:1, we see God supposedly incite David to take a census. But in 
-            1 Chronicles 21:1, Satan does the inciting. Wait... so which is it? Did the authors 
-            forget to compare notes? Or maybe there’s a deeper, non-literal meaning?
+            One passage says God made King David take a census. Another says it was Satan. 
+            You’d think they'd iron this out in the same holy book if it were that important. 
+            But hey, who’s counting?
           </p>
         </div>
       </div>
 
       <div class="contradiction-card">
         <div class="card-header">
-          <h3>2. Noah’s Ark: Two or Seven?</h3>
-          <p>Genesis 6:19-20 <em>vs.</em> Genesis 7:2-3</p>
+          <h4>Noah’s Ark: Two or Seven?</h4>
+          <p>(Genesis 6:19-20 vs. Genesis 7:2-3)</p>
         </div>
         <button class="reveal-btn" onclick="toggleCard('card-body-2')">
           Reveal the Contradiction
         </button>
         <div class="card-body" id="card-body-2">
-          <h4>The Conflict</h4>
+          <h5>The Conflict</h5>
           <p>
-            First, God says to bring two of each animal. Then it changes to seven pairs 
-            of each clean animal. Did we need extra spares for the post-Flood barbecue?
-            Multiple sources stitched together, or a brilliant invitation to read beyond
-            the literal? You decide.
+            First God says “two of every kind,” then “seven pairs of the clean animals.” 
+            If you think this is consistent, your mental gymnastics are gold-medal worthy. 
+            Maybe we just needed extra steaks post-flood?
           </p>
         </div>
       </div>
 
       <div class="contradiction-card">
         <div class="card-header">
-          <h3>3. The Death of Judas</h3>
-          <p>Matthew 27:5 <em>vs.</em> Acts 1:18</p>
+          <h4>Judas: Hanged or Fell Apart?</h4>
+          <p>(Matthew 27:5 vs. Acts 1:18)</p>
         </div>
         <button class="reveal-btn" onclick="toggleCard('card-body-3')">
           Reveal the Contradiction
         </button>
         <div class="card-body" id="card-body-3">
-          <h4>The Conflict</h4>
+          <h5>The Conflict</h5>
           <p>
-            Did Judas hang himself, or did he fall headlong and burst open in a field? 
-            Look, we get it—he’s not the most sympathetic figure. But if you’re taking 
-            everything literally, you’ll need some imaginative contortions to reconcile
-            these two.
+            Did he hang himself, or did he fall headlong and burst open? 
+            If you’re taking every verse literally, you’ll need a pretty creative 
+            scenario to reconcile these two gruesome endings. 
           </p>
         </div>
       </div>
@@ -360,43 +410,43 @@
 
     <!-- QUIZ SECTION -->
     <section id="quiz">
-      <h2>Interactive Quiz</h2>
+      <h3>Interactive Quiz</h3>
       <p>
-        Let's test if you’re reading scripture literally or seeing the bigger picture. Answer honestly:
+        Test how literally you’re taking these ancient texts that people keep weaponizing for modern mayhem:
       </p>
       <div class="quiz-container">
         <div class="quiz-question">
-          <h3>1. When Jesus says “pluck out your eye” if it causes you to sin (Matt 5:29), do you:</h3>
+          <h4>1. When Revelation mentions “locusts with human faces” wreaking havoc, you think:</h4>
           <div class="quiz-options">
             <label>
               <input type="radio" name="q1" value="literal"/>
-              Prepare to audition for a pirate crew.
+              “Yep, real mutant locusts are coming. We’re doomed.”
             </label>
             <label>
               <input type="radio" name="q1" value="metaphor"/>
-              Understand it as hyperbole about removing temptations.
+              “Sounds like a metaphor for oppressive regimes or unstoppable forces.”
             </label>
             <label>
               <input type="radio" name="q1" value="sarcasm"/>
-              Think, “Who needs an eye patch when you can avoid this nonsense altogether?”
+              “I’d pay to see that blockbuster, but I’m not basing my worldview on it.”
             </label>
           </div>
         </div>
 
         <div class="quiz-question">
-          <h3>2. The Book of Revelation describing locusts with human faces indicates:</h3>
+          <h4>2. When Jesus talks about “wars and rumors of wars” (Matt 24:6):</h4>
           <div class="quiz-options">
             <label>
               <input type="radio" name="q2" value="literal"/>
-              We should all invest in bug spray. You never know.
+              “Every new conflict is definitely The End. Any day now.”
             </label>
             <label>
               <input type="radio" name="q2" value="metaphor"/>
-              It's symbolic of corrupt forces or political powers—there’s depth here.
+              “He’s warning people not to panic at every crisis—calm down, folks.”
             </label>
             <label>
               <input type="radio" name="q2" value="sarcasm"/>
-              Ancient CGI and Michael Bay cameo, obviously.
+              “If I had a nickel for every ‘end times prophecy’ that flopped...”
             </label>
           </div>
         </div>
@@ -408,42 +458,30 @@
 
     <!-- SARCASTIC BLOCK / REFLECTION -->
     <section id="reflection">
-      <h2>Reflections</h2>
+      <h3>Edgy Reflection</h3>
       <p>
-        At GNOSIS, we're not out to destroy faith—we're nudging people to see that a 
-        **strictly literal** reading can be as clunky as dial-up internet in a 5G world.
+        If the planet goes up in nuclear flames because some zealots insisted on turning 
+        these texts into a literal script for Armageddon, how does that honor any God? 
+        Or humanity, for that matter?
       </p>
       <div class="sarcasm">
-        "Because if every verse is literal, we should all be worried about 
-        whale-swallowing incidents, donkey conversations, and 
-        weekly instructions to put entire cities to the sword."
+        “Bible literalism is the spiritual equivalent of driving your car 
+        by staring at the GPS directions with no regard for oncoming traffic or the cliff’s edge. 
+        Then acting surprised when you crash.”
       </div>
       <p>
-        By embracing context, poetry, allegory, and historical nuance, 
-        you just might find new dimensions of meaning—without 
-        stoking apocalyptic hysteria or drowning in contradictions.
+        It's time to snap out of it. Scriptures can have profound wisdom—metaphor, symbolism, 
+        moral teachings. But if we ignore the nuance and cling to every line as an 
+        unerring cosmic blueprint, we risk fueling the very fires we claim to fear.
       </p>
     </section>
-
-    <!-- FOOTER -->
-    <div class="footer">
-      <a href="https://jamkillerproductions.io">🌐</a>
-      <a href="https://youtube.com/@projamikiller">▶️</a>
-      <a href="https://twitter.com/projamkiller">🐦</a>
-      <a href="https://instagram.com/fletcherchristian1979">📸</a>
-      <a href="https://discord.com/invite/WHJ8sWhHVz">🎮</a>
-      <a href="https://open.spotify.com/artist/2FjdpboVDGnJs9wuGcJV8H">🎵</a>
-      <a href="https://t.me/jamkillerproductions">✉️</a>
-      <a href="https://lensfrens.xyz/@producerprotocol">🔗</a>
-      <a href="https://threads.net/@projamikiller">#️⃣</a>
-      <a href="https://tiktok.com/@thefletcherchristianband">🎶</a>
-      <a href="https://music.apple.com/us/artist/fletcher-christian/1237400126">🍏</a>
-      <a href="https://warpcast.com/projamkiller.eth">🚀</a>
-      <a href="https://soundcloud.com/96VBkCxknVruq9vWA">🔊</a>
-      <a href="https://zora.co/@projamkiller">🖼️</a>
-      <a href="mailto:yo@producerprotocol.pro">📧</a>
-    </div>
   </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2025 GNOSIS</p>
+    <a href="https://jamkillerproductions.pro">jamkillerproductions.pro</a>
+  </footer>
 
   <!-- JAVASCRIPT FOR INTERACTIVITY -->
   <script>
@@ -462,7 +500,7 @@
       const q2 = document.querySelector('input[name="q2"]:checked');
 
       if(!q1 || !q2) {
-        resultDiv.innerHTML = "Answer both questions before you see the light (or the sarcasm).";
+        resultDiv.innerHTML = "Answer both questions before you pronounce the End is near.";
         return;
       }
 
@@ -481,13 +519,13 @@
       // Determine result
       let message = '';
       if(literal > metaphor && literal > sarcasm) {
-        message = "<strong>You’re dangerously literal!</strong> Time to cool it with the donkey chats and city-smiting. Maybe explore some metaphorical nuance.";
+        message = "<strong>Literal Loose Cannon!</strong> Beware: reading every verse at face value might have you fueling global chaos. Step back from that doomsday ledge.";
       } else if(metaphor > literal && metaphor > sarcasm) {
-        message = "<strong>Metaphorical Maestro!</strong> You grasp the deeper layers. Keep delving into context, culture, and allegory—there’s wisdom there.";
+        message = "<strong>Metaphorical Maven!</strong> You get that ancient texts need context. You’re less likely to launch WWIII over a prophecy.";
       } else if(sarcasm > literal && sarcasm > metaphor) {
-        message = "<strong>Champ of Sarcasm!</strong> Your wit is sharper than a double-edged sword. Try not to scare the literalists too much.";
+        message = "<strong>Snarky Sage!</strong> Your cutting wit sees through the hype. Just don’t forget some folks actually believe this stuff—scary, right?";
       } else {
-        message = "<strong>Eclectic Mix!</strong> A bit literal, a bit sarcastic, a bit metaphorical. You’re flexible—just don’t sign up for any end-of-the-world cults.";
+        message = "<strong>Mixed Mind!</strong> A dash of literal, a hint of metaphor, a pinch of sarcasm. At least you’re not stockpiling nukes in the name of prophecy… we hope.";
       }
 
       resultDiv.innerHTML = message;
