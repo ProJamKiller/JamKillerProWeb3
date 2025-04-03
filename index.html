@@ -1,63 +1,497 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Stop War Petition</title>
-    <style>
-        body {
-            background-color: #f0f0f0;
-            color: #333;
-            font-family: Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-        }
-        form {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
-        input, button {
-            padding: 10px;
-            font-size: 16px;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>GNOSIS</title>
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    /* GLOBAL RESET */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* BODY & BASIC LAYOUT */
+    body {
+      font-family: 'Open Sans', sans-serif;
+      background: linear-gradient(135deg, #0c0c0c, #272727);
+      color: #fff;
+    }
+
+    header {
+      text-align: center;
+      padding: 80px 20px;
+      background: rgba(0, 0, 0, 0.6);
+      position: relative;
+      overflow: hidden;
+      border-bottom: 2px solid #ffcc00;
+    }
+
+    /* HEADER BACKGROUND ANIMATION (OPTIONAL) */
+    header::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(#ffcc00, transparent 70%);
+      opacity: 0.07;
+      animation: pulse 5s infinite alternate ease-in-out;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      100% { transform: scale(1.5); }
+    }
+
+    header h1 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 3.5rem;
+      color: #ffcc00;
+      margin-bottom: 10px;
+      text-shadow: 0 0 10px rgba(255, 204, 0, 0.8);
+    }
+
+    header p {
+      font-size: 1.2rem;
+      color: #ccc;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 20px;
+      background: rgba(20, 20, 20, 0.85);
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+    }
+
+    section {
+      margin-bottom: 40px;
+    }
+
+    section h2 {
+      font-size: 2rem;
+      border-bottom: 2px solid #ffcc00;
+      display: inline-block;
+      padding-bottom: 5px;
+      margin-bottom: 20px;
+      color: #ffcc00;
+      text-transform: uppercase;
+    }
+
+    section p {
+      font-size: 1rem;
+      line-height: 1.5;
+      margin-bottom: 20px;
+      color: #eee;
+    }
+
+    /* CONTRADICTION CARDS */
+    .contradiction-card {
+      background-color: #111;
+      border: 1px solid #ffcc00;
+      border-radius: 8px;
+      margin-bottom: 20px;
+      transition: transform 0.3s ease;
+      overflow: hidden;
+    }
+
+    .contradiction-card:hover {
+      transform: scale(1.01);
+    }
+
+    .card-header {
+      background: #222;
+      padding: 15px;
+    }
+
+    .card-header h3 {
+      color: #ffcc00;
+      margin-bottom: 5px;
+      font-size: 1.2rem;
+    }
+
+    .card-header p {
+      font-size: 0.9rem;
+      color: #ddd;
+    }
+
+    .reveal-btn {
+      display: block;
+      background: transparent;
+      border: none;
+      color: #ffcc00;
+      font-weight: bold;
+      font-size: 1rem;
+      text-transform: uppercase;
+      cursor: pointer;
+      margin: 10px auto;
+      padding: 10px;
+      transition: color 0.3s ease;
+    }
+
+    .reveal-btn:hover {
+      color: #ff6600;
+    }
+
+    .card-body {
+      display: none;
+      background: #1c1c1c;
+      padding: 15px;
+      border-top: 1px solid #ffcc00;
+    }
+
+    .card-body h4 {
+      color: #ffcc00;
+      margin-bottom: 10px;
+      font-size: 1.1rem;
+    }
+
+    .card-body p {
+      font-size: 0.9rem;
+      color: #ccc;
+    }
+
+    /* QUIZ SECTION */
+    .quiz-container {
+      background: #222;
+      padding: 20px;
+      border-radius: 8px;
+      border: 1px solid #ffcc00;
+      margin: 0 auto;
+      max-width: 600px;
+    }
+
+    .quiz-question {
+      margin-bottom: 25px;
+    }
+
+    .quiz-question h3 {
+      font-size: 1rem;
+      margin-bottom: 10px;
+      color: #fff;
+    }
+
+    .quiz-options label {
+      display: block;
+      background: #333;
+      margin-bottom: 8px;
+      padding: 10px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.3s;
+      font-size: 0.9rem;
+    }
+
+    .quiz-options label:hover {
+      background: #444;
+    }
+
+    .quiz-options input[type="radio"] {
+      margin-right: 8px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #ffcc00;
+      color: #000;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 1rem;
+      text-decoration: none;
+      transition: background-color 0.3s;
+      margin-top: 10px;
+      text-transform: uppercase;
+      font-weight: bold;
+    }
+
+    .btn:hover {
+      background-color: #ffd633;
+    }
+
+    #quiz-result {
+      margin-top: 20px;
+      font-size: 1rem;
+      color: #ff6600;
+    }
+
+    /* SARCASTIC BLOCK */
+    .sarcasm {
+      background: #111;
+      padding: 20px;
+      border-left: 4px solid #ff3300;
+      font-style: italic;
+      margin: 20px 0;
+    }
+
+    /* FOOTER */
+    .footer {
+      margin-top: 40px;
+      padding: 20px;
+      background: #111;
+      border-top: 2px solid #ffcc00;
+      text-align: center;
+    }
+
+    .footer a {
+      margin: 0 10px;
+      color: #ffcc00;
+      font-size: 24px;
+      text-decoration: none;
+      transition: transform 0.3s;
+    }
+
+    .footer a:hover {
+      transform: scale(1.2);
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 2.5rem;
+      }
+      .container {
+        margin: 20px;
+      }
+      .quiz-container, .contradiction-card {
+        margin: 10px auto;
+      }
+    }
+  </style>
 </head>
 <body>
-    <form id="petitionForm">
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name" required>
-        <button type="submit">Submit</button>
-    </form>
 
-    <script>
-        document.getElementById('petitionForm').addEventListener('submit', async (event) => {
-            event.preventDefault();
-            const name = document.getElementById('name').value;
-            console.log('Submitting form with name:', name);
-            try {
-                const response = await fetch('https://fletcherchristiankc.rip/*', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify({ name })
-                });
-                console.log('Response:', response);
-                if (response.ok) {
-                    alert('Name saved!');
-                } else {
-                    alert('There was an error saving your name.');
-                }
-            } catch (error) {
-                console.error('Error:', error);
-                alert('There was an error processing your request.');
-            }
-        });
-    </script>
+  <!-- HEADER -->
+  <header>
+    <h1>GNOSIS</h1>
+    <p>The Bible: Powerful, Poetic, and Definitely Not a Literal Script for Doom.</p>
+  </header>
+
+  <!-- MAIN CONTENT WRAPPER -->
+  <div class="container">
+
+    <!-- WELCOME SECTION -->
+    <section id="welcome">
+      <h2>Welcome to GNOSIS</h2>
+      <p>
+        Here at GNOSIS, we say it’s time to question out-of-context interpretations, contradictory verses, and
+        doomsday predictions that never seem to pan out. (Looking at you, 1844, 1988, 2011...) 
+      </p>
+      <p>
+        Armed with a Master’s in Theology (and a penchant for snark), we’re here to guide you through the 
+        glorious maze of biblical passages—helping you see them for their symbolic, poetic, and metaphorical brilliance 
+        rather than reading them like a boring, overly literal instruction manual.
+      </p>
+    </section>
+
+    <!-- CONTRADICTIONS SECTION -->
+    <section id="contradictions">
+      <h2>Contradictions & Absurdities</h2>
+      <p>
+        Because reading ancient texts literally—word for word—can lead to head-scratching moments like these:
+      </p>
+
+      <!-- EXAMPLE CONTRADICTION CARD -->
+      <div class="contradiction-card">
+        <div class="card-header">
+          <h3>1. God Incites or Satan Incites?</h3>
+          <p>2 Samuel 24:1 <em>vs.</em> 1 Chronicles 21:1</p>
+        </div>
+        <button class="reveal-btn" onclick="toggleCard('card-body-1')">
+          Reveal the Contradiction
+        </button>
+        <div class="card-body" id="card-body-1">
+          <h4>The Conflict</h4>
+          <p>
+            In 2 Samuel 24:1, we see God supposedly incite David to take a census. But in 
+            1 Chronicles 21:1, Satan does the inciting. Wait... so which is it? Did the authors 
+            forget to compare notes? Or maybe there’s a deeper, non-literal meaning?
+          </p>
+        </div>
+      </div>
+
+      <div class="contradiction-card">
+        <div class="card-header">
+          <h3>2. Noah’s Ark: Two or Seven?</h3>
+          <p>Genesis 6:19-20 <em>vs.</em> Genesis 7:2-3</p>
+        </div>
+        <button class="reveal-btn" onclick="toggleCard('card-body-2')">
+          Reveal the Contradiction
+        </button>
+        <div class="card-body" id="card-body-2">
+          <h4>The Conflict</h4>
+          <p>
+            First, God says to bring two of each animal. Then it changes to seven pairs 
+            of each clean animal. Did we need extra spares for the post-Flood barbecue?
+            Multiple sources stitched together, or a brilliant invitation to read beyond
+            the literal? You decide.
+          </p>
+        </div>
+      </div>
+
+      <div class="contradiction-card">
+        <div class="card-header">
+          <h3>3. The Death of Judas</h3>
+          <p>Matthew 27:5 <em>vs.</em> Acts 1:18</p>
+        </div>
+        <button class="reveal-btn" onclick="toggleCard('card-body-3')">
+          Reveal the Contradiction
+        </button>
+        <div class="card-body" id="card-body-3">
+          <h4>The Conflict</h4>
+          <p>
+            Did Judas hang himself, or did he fall headlong and burst open in a field? 
+            Look, we get it—he’s not the most sympathetic figure. But if you’re taking 
+            everything literally, you’ll need some imaginative contortions to reconcile
+            these two.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- QUIZ SECTION -->
+    <section id="quiz">
+      <h2>Interactive Quiz</h2>
+      <p>
+        Let's test if you’re reading scripture literally or seeing the bigger picture. Answer honestly:
+      </p>
+      <div class="quiz-container">
+        <div class="quiz-question">
+          <h3>1. When Jesus says “pluck out your eye” if it causes you to sin (Matt 5:29), do you:</h3>
+          <div class="quiz-options">
+            <label>
+              <input type="radio" name="q1" value="literal"/>
+              Prepare to audition for a pirate crew.
+            </label>
+            <label>
+              <input type="radio" name="q1" value="metaphor"/>
+              Understand it as hyperbole about removing temptations.
+            </label>
+            <label>
+              <input type="radio" name="q1" value="sarcasm"/>
+              Think, “Who needs an eye patch when you can avoid this nonsense altogether?”
+            </label>
+          </div>
+        </div>
+
+        <div class="quiz-question">
+          <h3>2. The Book of Revelation describing locusts with human faces indicates:</h3>
+          <div class="quiz-options">
+            <label>
+              <input type="radio" name="q2" value="literal"/>
+              We should all invest in bug spray. You never know.
+            </label>
+            <label>
+              <input type="radio" name="q2" value="metaphor"/>
+              It's symbolic of corrupt forces or political powers—there’s depth here.
+            </label>
+            <label>
+              <input type="radio" name="q2" value="sarcasm"/>
+              Ancient CGI and Michael Bay cameo, obviously.
+            </label>
+          </div>
+        </div>
+
+        <button class="btn" onclick="submitQuiz()">Submit</button>
+        <div id="quiz-result"></div>
+      </div>
+    </section>
+
+    <!-- SARCASTIC BLOCK / REFLECTION -->
+    <section id="reflection">
+      <h2>Reflections</h2>
+      <p>
+        At GNOSIS, we're not out to destroy faith—we're nudging people to see that a 
+        **strictly literal** reading can be as clunky as dial-up internet in a 5G world.
+      </p>
+      <div class="sarcasm">
+        "Because if every verse is literal, we should all be worried about 
+        whale-swallowing incidents, donkey conversations, and 
+        weekly instructions to put entire cities to the sword."
+      </div>
+      <p>
+        By embracing context, poetry, allegory, and historical nuance, 
+        you just might find new dimensions of meaning—without 
+        stoking apocalyptic hysteria or drowning in contradictions.
+      </p>
+    </section>
+
+    <!-- FOOTER -->
+    <div class="footer">
+      <a href="https://jamkillerproductions.io">🌐</a>
+      <a href="https://youtube.com/@projamikiller">▶️</a>
+      <a href="https://twitter.com/projamkiller">🐦</a>
+      <a href="https://instagram.com/fletcherchristian1979">📸</a>
+      <a href="https://discord.com/invite/WHJ8sWhHVz">🎮</a>
+      <a href="https://open.spotify.com/artist/2FjdpboVDGnJs9wuGcJV8H">🎵</a>
+      <a href="https://t.me/jamkillerproductions">✉️</a>
+      <a href="https://lensfrens.xyz/@producerprotocol">🔗</a>
+      <a href="https://threads.net/@projamikiller">#️⃣</a>
+      <a href="https://tiktok.com/@thefletcherchristianband">🎶</a>
+      <a href="https://music.apple.com/us/artist/fletcher-christian/1237400126">🍏</a>
+      <a href="https://warpcast.com/projamkiller.eth">🚀</a>
+      <a href="https://soundcloud.com/96VBkCxknVruq9vWA">🔊</a>
+      <a href="https://zora.co/@projamkiller">🖼️</a>
+      <a href="mailto:yo@producerprotocol.pro">📧</a>
+    </div>
+  </div>
+
+  <!-- JAVASCRIPT FOR INTERACTIVITY -->
+  <script>
+    // Toggle card reveal
+    function toggleCard(id) {
+      const content = document.getElementById(id);
+      content.style.display = (content.style.display === 'none' || content.style.display === '') 
+        ? 'block' 
+        : 'none';
+    }
+
+    // Quiz logic
+    function submitQuiz() {
+      const resultDiv = document.getElementById('quiz-result');
+      const q1 = document.querySelector('input[name="q1"]:checked');
+      const q2 = document.querySelector('input[name="q2"]:checked');
+
+      if(!q1 || !q2) {
+        resultDiv.innerHTML = "Answer both questions before you see the light (or the sarcasm).";
+        return;
+      }
+
+      let literal = 0, metaphor = 0, sarcasm = 0;
+
+      // Evaluate question 1
+      if(q1.value === 'literal') literal++;
+      if(q1.value === 'metaphor') metaphor++;
+      if(q1.value === 'sarcasm') sarcasm++;
+
+      // Evaluate question 2
+      if(q2.value === 'literal') literal++;
+      if(q2.value === 'metaphor') metaphor++;
+      if(q2.value === 'sarcasm') sarcasm++;
+
+      // Determine result
+      let message = '';
+      if(literal > metaphor && literal > sarcasm) {
+        message = "<strong>You’re dangerously literal!</strong> Time to cool it with the donkey chats and city-smiting. Maybe explore some metaphorical nuance.";
+      } else if(metaphor > literal && metaphor > sarcasm) {
+        message = "<strong>Metaphorical Maestro!</strong> You grasp the deeper layers. Keep delving into context, culture, and allegory—there’s wisdom there.";
+      } else if(sarcasm > literal && sarcasm > metaphor) {
+        message = "<strong>Champ of Sarcasm!</strong> Your wit is sharper than a double-edged sword. Try not to scare the literalists too much.";
+      } else {
+        message = "<strong>Eclectic Mix!</strong> A bit literal, a bit sarcastic, a bit metaphorical. You’re flexible—just don’t sign up for any end-of-the-world cults.";
+      }
+
+      resultDiv.innerHTML = message;
+    }
+  </script>
 </body>
 </html>
