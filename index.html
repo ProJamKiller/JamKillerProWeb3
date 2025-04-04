@@ -17,16 +17,17 @@
     /* BODY & BASIC LAYOUT */
     body {
       font-family: 'Open Sans', sans-serif;
-      background: linear-gradient(135deg, #0c0c0c, #272727);
+      background: linear-gradient(135deg, #0c0c0c, #3f104f); /* Slight shift to a purple-tinted background */
       color: #fff;
       overflow-x: hidden;
     }
 
+    /* HEADER */
     header {
       text-align: center;
       background: rgba(0, 0, 0, 0.6);
       position: relative;
-      border-bottom: 2px solid #ffcc00;
+      border-bottom: 2px solid #9933ff; /* Purple accent for header bottom border */
       overflow: hidden;
       padding: 20px;
     }
@@ -36,10 +37,10 @@
       max-width: 100%;
       height: auto;
       display: block;
-      margin: 0 auto 10px auto;
+      margin: 0 auto 10px;
     }
 
-    /* OPTIONAL BACKGROUND ANIMATION (CAN BE REMOVED IF DESIRED) */
+    /* OPTIONAL BACKGROUND ANIMATION */
     header::before {
       content: "";
       position: absolute;
@@ -47,12 +48,11 @@
       left: -50%;
       width: 200%;
       height: 200%;
-      background: radial-gradient(#ffcc00, transparent 70%);
+      background: radial-gradient(#9933ff, transparent 70%);
       opacity: 0.07;
       animation: pulse 5s infinite alternate ease-in-out;
       pointer-events: none;
     }
-
     @keyframes pulse {
       0% { transform: scale(1); }
       100% { transform: scale(1.5); }
@@ -94,11 +94,11 @@
 
     section h3 {
       font-size: 2rem;
-      border-bottom: 2px solid #ffcc00;
+      border-bottom: 2px solid #9933ff; /* Purple accent for section headers */
       display: inline-block;
       padding-bottom: 5px;
       margin-bottom: 20px;
-      color: #ffcc00;
+      color: #ffcc00; /* Keep gold text for contrast */
       text-transform: uppercase;
     }
 
@@ -109,31 +109,46 @@
       color: #eee;
     }
 
+    /* WARNING BLOCK */
+    .warning-block {
+      background: #2b0000;
+      border-left: 4px solid #ff0000;
+      padding: 20px;
+      margin-bottom: 40px;
+      color: #f2f2f2;
+    }
+    .warning-block h4 {
+      margin-bottom: 10px;
+      color: #ff5555;
+    }
+    .warning-block p {
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
     /* CONTRADICTION CARDS */
     .contradiction-card {
       background-color: #111;
       border: 1px solid #ffcc00;
       border-radius: 8px;
       margin-bottom: 20px;
-      transition: transform 0.3s ease;
+      transition: transform 0.3s ease, border-color 0.3s ease;
       overflow: hidden;
     }
-
     .contradiction-card:hover {
       transform: scale(1.01);
+      border-color: #9933ff; /* Purple highlight on hover */
     }
 
     .card-header {
       background: #222;
       padding: 15px;
     }
-
     .card-header h4 {
-      color: #ffcc00;
+      color: #ffcc00; 
       margin-bottom: 5px;
       font-size: 1.2rem;
     }
-
     .card-header p {
       font-size: 0.9rem;
       color: #ddd;
@@ -152,9 +167,8 @@
       padding: 10px;
       transition: color 0.3s ease;
     }
-
     .reveal-btn:hover {
-      color: #ff6600;
+      color: #9933ff; /* Purple hover effect on reveal button */
     }
 
     .card-body {
@@ -163,13 +177,11 @@
       padding: 15px;
       border-top: 1px solid #ffcc00;
     }
-
     .card-body h5 {
       color: #ffcc00;
       margin-bottom: 10px;
       font-size: 1.1rem;
     }
-
     .card-body p {
       font-size: 0.9rem;
       color: #ccc;
@@ -180,21 +192,20 @@
       background: #222;
       padding: 20px;
       border-radius: 8px;
-      border: 1px solid #ffcc00;
+      border: 2px solid #9933ff; /* Purple accent for quiz container */
       margin: 0 auto;
       max-width: 600px;
+      transition: border-color 0.3s ease;
     }
 
     .quiz-question {
       margin-bottom: 25px;
     }
-
     .quiz-question h4 {
       font-size: 1rem;
       margin-bottom: 10px;
       color: #fff;
     }
-
     .quiz-options label {
       display: block;
       background: #333;
@@ -205,11 +216,9 @@
       transition: background 0.3s;
       font-size: 0.9rem;
     }
-
     .quiz-options label:hover {
       background: #444;
     }
-
     .quiz-options input[type="radio"] {
       margin-right: 8px;
     }
@@ -229,7 +238,6 @@
       text-transform: uppercase;
       font-weight: bold;
     }
-
     .btn:hover {
       background-color: #ffd633;
     }
@@ -249,31 +257,12 @@
       margin: 20px 0;
     }
 
-    /* CTA or EXTRA STYLES */
-    .warning-block {
-      background: #2b0000;
-      border-left: 4px solid #ff0000;
-      padding: 20px;
-      margin-bottom: 40px;
-      color: #f2f2f2;
-    }
-
-    .warning-block h4 {
-      margin-bottom: 10px;
-      color: #ff5555;
-    }
-
-    .warning-block p {
-      font-size: 0.95rem;
-      line-height: 1.6;
-    }
-
     /* FOOTER */
     footer {
       margin-top: 40px;
       padding: 20px;
       background: #111;
-      border-top: 2px solid #ffcc00;
+      border-top: 2px solid #9933ff; /* Purple accent on footer top border */
       text-align: center;
     }
     footer p {
@@ -288,6 +277,7 @@
     }
     footer a:hover {
       transform: scale(1.1);
+      color: #9933ff; /* Turn link purple on hover */
     }
 
     /* RESPONSIVE */
@@ -464,9 +454,9 @@
       </div>
     </section>
 
-    <!-- SARCASTIC BLOCK / REFLECTION -->
+    <!-- REFLECTION SECTION -->
     <section id="reflection">
-      <h3>Edgy Reflection</h3>
+      <h3>A Moment of Reflection</h3>
       <p>
         If the planet goes up in nuclear flames because some zealots insisted on turning 
         these texts into a literal script for Armageddon, how does that honor any God? 
@@ -478,7 +468,7 @@
         Then acting surprised when you crash.”
       </div>
       <p>
-        It's time to snap out of it. Scriptures can have profound wisdom—metaphor, symbolism, 
+        It’s time to snap out of it. Scriptures can have profound wisdom—metaphor, symbolism, 
         moral teachings. But if we ignore the nuance and cling to every line as an 
         unerring cosmic blueprint, we risk fueling the very fires we claim to fear.
       </p>
